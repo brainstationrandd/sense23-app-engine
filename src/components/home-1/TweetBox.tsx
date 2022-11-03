@@ -2,9 +2,9 @@ import React, { Fragment, useEffect, useState } from "react";
 import Box from "../Box";
 import Container from "../Container";
 import FlexBox from "../FlexBox";
-import Hidden from "../hidden/Hidden";
 import Typography from "../Typography";
 import StyledProductCategory from "./ProductCategoryStyle";
+import TweetsItem from '../TweetsItem';
 
 type Props = {
   tweetTitle?: string;
@@ -28,10 +28,9 @@ const TweetBox: React.FC<Props> = ({tweetList,tweetTitle}) => {
   }, [type]);
 
   return (
-    <Container mb="70px">
+    <Container mb="20px">
       <FlexBox>
-        <Hidden down={768} mr="1.75rem">
-          <Box shadow={6} borderRadius={10} padding="1.25rem" bg="white">
+          <Box width={1} mx={10} shadow={6} borderRadius={10} padding="1.25rem" bg="white">
             <FlexBox mt="-0.5rem" mb="0.5rem">
               <Typography
                 fontWeight="600"
@@ -47,18 +46,22 @@ const TweetBox: React.FC<Props> = ({tweetList,tweetTitle}) => {
             </FlexBox>
 
             {list.map((tweet, ind) => (
-              <Fragment>
+              <TweetsItem 
+              bg={selected.match(tweet) ? "#D9D9D9" : "#F3F6F9"} 
+              shadow={selected.match(tweet) ? 4 : null}
+              py={2} px={3} mb={2} borderRadius={5} >
                 <span>Tweet {ind+1}</span>
-              <StyledProductCategory
-                key={tweet}
-                mb="0.75rem"
-                bg={selected.match(tweet) ? "white" : "gray.100"}
-                shadow={selected.match(tweet) ? 4 : null}
-                onClick={() => handleCategoryClick(tweet)}
-              >
-                <span className="product-category-title">{tweet}</span>
-              </StyledProductCategory>
-              </Fragment>
+                <StyledProductCategory
+                  key={tweet}
+                  mb="0.75rem"
+                  bg="#D9D9D9"
+                  mt={2}
+                  
+                  onClick={() => handleCategoryClick(tweet)}
+                >
+                  <span className="product-category-title">{tweet}</span>
+                </StyledProductCategory>
+              </TweetsItem>
             ))}
 
             <StyledProductCategory
@@ -72,9 +75,6 @@ const TweetBox: React.FC<Props> = ({tweetList,tweetTitle}) => {
               </span>
             </StyledProductCategory>
           </Box>
-        </Hidden>
-
-        
       </FlexBox>
     </Container>
   );

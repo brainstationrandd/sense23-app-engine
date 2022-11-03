@@ -11,6 +11,7 @@ import Menu from "../Menu";
 import MenuItem from "../MenuItem";
 import TextField from "../text-field/TextField";
 import StyledSearchBox from "./SearchBoxStyle";
+import { Badge } from '@component/badge/Badge';
 
 export interface SearchBoxProps {}
 
@@ -61,7 +62,10 @@ const SearchBox: React.FC<SearchBoxProps> = () => {
           className="category-dropdown" 
           direction="right"
           handler={
-            <FlexBox className="dropdown-handler" alignItems="center">
+            <FlexBox 
+              bg={'#D23F57'} 
+              color={"white"}
+              className="dropdown-handler" alignItems="center">
               Search
             </FlexBox>
           }
