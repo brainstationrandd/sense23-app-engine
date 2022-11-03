@@ -1,3 +1,4 @@
+import Button from "@component/buttons/Button";
 import Card from "@component/Card";
 import { Span } from "@component/Typography";
 import { debounce } from "lodash";
@@ -57,20 +58,14 @@ const SearchBox: React.FC<SearchBoxProps> = () => {
           onChange={hanldeSearch}
         />
         <Menu
-          className="category-dropdown"
+          className="category-dropdown" 
           direction="right"
           handler={
             <FlexBox className="dropdown-handler" alignItems="center">
-              <span>{category}</span>
-              <Icon variant="small">chevron-down</Icon>
+              Search
             </FlexBox>
           }
         >
-          {categories.map((item) => (
-            <MenuItem key={item} onClick={handleCategoryChange(item)}>
-              {item}
-            </MenuItem>
-          ))}
         </Menu>
         {/* <Box className="menu-button" ml="14px" cursor="pointer">
           <Icon color="primary">menu</Icon>
