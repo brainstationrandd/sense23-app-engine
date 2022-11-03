@@ -1,6 +1,5 @@
 import Button from "@component/buttons/Button";
 import FlexBox from "@component/FlexBox";
-import Image from "@component/Image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
