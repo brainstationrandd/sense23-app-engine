@@ -107,7 +107,7 @@ const Signup: React.FC = () => {
           name="re_password"
           placeholder="*********"
           type={passwordVisibility ? "text" : "password"}
-          label="Confirm Password"
+          label="Retype Password"
           fullwidth
           endAdornment={
             <IconButton
