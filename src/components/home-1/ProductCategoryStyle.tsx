@@ -13,6 +13,7 @@ const StyledProductCategory = styled(Box)<StyledProductCategoryProps>`
   cursor: pointer;
   min-width: 240px;
   border-radius: 5px;
+  cursor: unset;
 
   &:hover {
     box-shadow: ${getTheme("shadows.4")};

@@ -63,6 +63,9 @@ const SearchBox: React.FC<SearchBoxProps> = () => {
           direction="right"
           handler={
             <FlexBox 
+              border={0}
+              borderTopRightRadius={20}
+              borderBottomRightRadius={20}
               bg={'#D23F57'} 
               color={"white"}
               className="dropdown-handler" alignItems="center">

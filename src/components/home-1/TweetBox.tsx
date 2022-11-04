@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "../Box";
 import Container from "../Container";
 import FlexBox from "../FlexBox";
@@ -28,9 +28,9 @@ const TweetBox: React.FC<Props> = ({tweetList,tweetTitle}) => {
   }, [type]);
 
   return (
-    <Container mb="20px">
-      <FlexBox>
-          <Box width={1} mx={10} shadow={6} borderRadius={10} padding="1.25rem" bg="white">
+    <Container mt={40} mb="20px">
+      <FlexBox flexWrap='wrap' justifyContent='center'>
+          <Box minHeight={278} mb={20} shadow={6} borderRadius={10} padding="1.25rem" bg="white">
             <FlexBox mt="-0.5rem" mb="0.5rem">
               <Typography
                 fontWeight="600"
@@ -42,7 +42,6 @@ const TweetBox: React.FC<Props> = ({tweetList,tweetTitle}) => {
               >
                 {tweetTitle}
               </Typography>
-          
             </FlexBox>
 
             {list.map((tweet, ind) => (
@@ -56,8 +55,7 @@ const TweetBox: React.FC<Props> = ({tweetList,tweetTitle}) => {
                   mb="0.75rem"
                   bg="#D9D9D9"
                   mt={2}
-                  
-                  onClick={() => handleCategoryClick(tweet)}
+                  onClick={() => {}}
                 >
                   <span className="product-category-title">{tweet}</span>
                 </StyledProductCategory>
@@ -65,7 +63,7 @@ const TweetBox: React.FC<Props> = ({tweetList,tweetTitle}) => {
             ))}
 
             <StyledProductCategory
-              mt="4rem"
+              mt="3rem"
               bg={selected.match(`all-${type}`) ? "white" : "gray.100"}
               shadow={selected.match(`all-${type}`) ? 4 : null}
               onClick={() => handleCategoryClick(`all-${type}`)}
