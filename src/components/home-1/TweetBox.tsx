@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { textStyle, colorStyle, buttonStyle } from 'styled-system';
 import Box from "../Box";
 import Container from "../Container";
 import FlexBox from "../FlexBox";
 import Typography from "../Typography";
 import StyledProductCategory from "./ProductCategoryStyle";
 import TweetsItem from '../TweetsItem';
+import Button from '../buttons/Button';
 
 type Props = {
   tweetTitle?: string;
@@ -55,15 +57,23 @@ const TweetBox: React.FC<Props> = ({tweetList,tweetTitle}) => {
                   mb="0.75rem"
                   bg="#D9D9D9"
                   mt={2}
+                  borderRadius={1}
                   onClick={() => {}}
                 >
-                  <span className="product-category-title">{tweet}</span>
+                  {tweet}
                 </StyledProductCategory>
               </TweetsItem>
             ))}
 
-            <StyledProductCategory
-              mt="3rem"
+
+            <Button mt="3rem" size="small" fullwidth bg={"#F3F6F9"}>
+              <Typography fontWeight="normal">
+                Loadmore ...
+              </Typography>
+             </Button>
+
+            {/* <StyledProductCategory
+              
               bg={selected.match(`all-${type}`) ? "white" : "gray.100"}
               shadow={selected.match(`all-${type}`) ? 4 : null}
               onClick={() => handleCategoryClick(`all-${type}`)}
@@ -71,7 +81,7 @@ const TweetBox: React.FC<Props> = ({tweetList,tweetTitle}) => {
               <span className="product-category-title show-all">
                 Load More ...
               </span>
-            </StyledProductCategory>
+            </StyledProductCategory> */}
           </Box>
       </FlexBox>
     </Container>

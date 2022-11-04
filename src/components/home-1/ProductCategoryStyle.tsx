@@ -4,6 +4,7 @@ import Box from "../Box";
 
 type StyledProductCategoryProps = {
   onClick: any;
+  borderRadius?: number;
 };
 
 const StyledProductCategory = styled(Box)<StyledProductCategoryProps>`
@@ -12,7 +13,7 @@ const StyledProductCategory = styled(Box)<StyledProductCategoryProps>`
   padding: 0.75rem 1rem;
   cursor: pointer;
   min-width: 240px;
-  border-radius: 5px;
+  border-radius: ${props => props?.borderRadius ? props?.borderRadius+'px' : '5px' };
   cursor: unset;
 
   &:hover {
