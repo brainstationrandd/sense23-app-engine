@@ -43,7 +43,7 @@ const Login: React.FC = () => {
     <StyledSessionCard mx="auto" my="2rem" boxShadow="large">
       <form className="content" onSubmit={handleSubmit}>
         <H3 textAlign="center" mb="0.5rem">
-          Welcome To Ecommerce
+        Welcome To Sense AppEngine
         </H3>
         <H5
           fontWeight="600"
