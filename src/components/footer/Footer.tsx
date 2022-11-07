@@ -31,15 +31,6 @@ const Footer: React.FC = () => {
           <Box py="5rem" overflow="hidden">
             <Grid container spacing={6}>
               <Grid item lg={4} md={6} sm={6} xs={12}>
-                <Link href="/">
-                  <a>
-                    <Image
-                      mb="1.25rem"
-                      src="/assets/images/logo.svg"
-                      alt="logo"
-                    />
-                  </a>
-                </Link>
 
                 <Paragraph mb="1.25rem" color="gray.500">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -76,7 +67,7 @@ const Footer: React.FC = () => {
                   mb="1.25rem"
                   lineHeight="1"
                 >
-                  Customer Care
+                  We Care
                 </Typography>
 
                 <div>

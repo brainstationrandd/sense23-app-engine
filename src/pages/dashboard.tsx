@@ -1,11 +1,11 @@
-import Section1 from "@component/home-1/Section1";
+import CommonSection from "@component/home-1/CommonSection";
 import AppLayout from "@component/layout/AppLayout";
 
 const Dashboard = () => {
 
   return (
     <main>
-      <Section1/>
+      <CommonSection/>
     </main>
   );
 };

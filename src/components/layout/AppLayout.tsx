@@ -1,6 +1,8 @@
+import Footer from "@component/footer/Footer";
 import Header from "@component/header/Header";
 import MobileNavigationBar from "@component/mobile-navigation/MobileNavigationBar";
 import Sticky from "@component/sticky/Sticky";
+import Topbar from "@component/topbar/Topbar";
 import Head from "next/head";
 import React from "react";
 import StyledAppLayout from "./AppLayoutStyle";
@@ -22,8 +24,8 @@ const AppLayout: React.FC<Props> = ({
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
 
+    <Topbar/>
   
-
     <Sticky fixedOn={0}>
       <Header />
     </Sticky>
@@ -36,6 +38,7 @@ const AppLayout: React.FC<Props> = ({
     )}
 
     <MobileNavigationBar />
+    <Footer/>
     
   </StyledAppLayout>
 );
