@@ -8,11 +8,29 @@ import MegaMenu2 from "./mega-menu/MegaMenu2";
 export interface CategoryDropdownProps {
   open: boolean;
   position?: "absolute" | "relative";
+  navData?:{
+    icon: string;
+    title: string;
+    href: string;
+    menuComponent: string;
+    menuData: {
+        categories: {
+            title: string;
+            href: string;
+            subCategories: {
+                title: string;
+                href: string;
+                imgUrl: string;
+            }[];
+        }[];
+    };
+  }[]
 }
 
 const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
   open,
   position,
+  navData=navigations
 }) => {
   const megaMenu = {
     MegaMenu1,
@@ -21,7 +39,7 @@ const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
 
   return (
     <StyledCategoryDropdown open={open} position={position}>
-      {navigations.map((item) => {
+      {navData.map((item) => {
         let MegaMenu = megaMenu[item.menuComponent];
 
         return (

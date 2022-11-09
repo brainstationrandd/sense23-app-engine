@@ -5,9 +5,26 @@ import { StyledCategory } from "./CategoryStyle";
 export interface CategoriesProps {
   open?: boolean;
   children: React.ReactElement;
+  navData?:{
+    icon: string;
+    title: string;
+    href: string;
+    menuComponent: string;
+    menuData: {
+        categories: {
+            title: string;
+            href: string;
+            subCategories: {
+                title: string;
+                href: string;
+                imgUrl: string;
+            }[];
+        }[];
+    };
+  }[]
 }
 
-const Categories: React.FC<CategoriesProps> = ({ open: isOpen, children }) => {
+const Categories: React.FC<CategoriesProps> = ({ open: isOpen, children,navData }) => {
   const [open, setOpen] = useState(isOpen);
   const popoverRef = useRef(open);
   popoverRef.current = open;
@@ -35,7 +52,7 @@ const Categories: React.FC<CategoriesProps> = ({ open: isOpen, children }) => {
         className: `${children.props.className} cursor-pointer`,
         onClick: toggleMenu,
       })}
-      <CategoryDropdown open={open} />
+      <CategoryDropdown open={open} navData={navData}/>
     </StyledCategory>
   );
 };
