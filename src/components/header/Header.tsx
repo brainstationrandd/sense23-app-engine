@@ -19,8 +19,8 @@ const Header: React.FC<HeaderProps> = ({ isFixed, className }) => {
         justifyContent="space-between"
         height="100%"
       >
-
-        <FlexBox justifyContent="center" flex="1 1 0">
+        <FlexBox justifyContent="center" alignItems={'center'} flex="1 1 0">
+          <h1>Sense 23 App Engine</h1>
           <SearchBox />
         </FlexBox>
       </Container>
