@@ -2,7 +2,6 @@ import Badge from "@component/badge/Badge";
 import Box from "@component/Box";
 import Card from "@component/Card";
 import MenuItem from "@component/MenuItem";
-import navbarNavigations from "@data/navbarNavigations";
 import React from "react";
 import Button from "../buttons/Button";
 import Categories from "../categories/Categories";
@@ -15,6 +14,35 @@ import StyledNavbar from "./NavbarStyle";
 
 export interface NavbarProps {
   navListOpen?: boolean;
+  headBar?:boolean;
+  navData?:{
+    icon: string;
+    title: string;
+    href: string;
+    menuComponent: string;
+    menuData: {
+        categories: {
+            title: string;
+            href: string;
+            subCategories: {
+                title: string;
+                href: string;
+                imgUrl: string;
+            }[];
+        }[];
+    };
+  }[];
+  navbarNavigations: {
+    title: string;
+    child: {
+        title: string;
+        child: {
+            title: string;
+            url: string;
+        }[];
+      }[];
+  }[];
+  navBarTitle:string;
 }
 
 interface Nav {
@@ -25,7 +53,7 @@ interface Nav {
   extLink?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ navListOpen }) => {
+const Navbar: React.FC<NavbarProps> = ({ navListOpen,headBar=false,navbarNavigations,navData,navBarTitle }) => {
   const renderNestedNav = (list: any[], isRoot = false) => {
     return list?.map((nav: Nav) => {
       if (isRoot) {
@@ -59,7 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ navListOpen }) => {
               )}
             </NavLink>
           );
-        if (nav.child)
+        if (nav.child && headBar)
           return (
             <FlexBox
               className="root"
@@ -84,6 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({ navListOpen }) => {
                 </Card>
               </Box>
             </FlexBox>
+           
           );
       } else {
         if (nav.url)
@@ -143,9 +172,10 @@ const Navbar: React.FC<NavbarProps> = ({ navListOpen }) => {
         alignItems="center"
         height="100%"
       >
-        <Categories open={navListOpen}>
+        <Categories open={navListOpen} navData={navData}>
+         
           <Button width="278px" height="40px" bg="body.default" variant="text">
-            <Icon>categories</Icon>
+            {headBar && <Icon>categories</Icon>}
             <Typography
               fontWeight="600"
               textAlign="left"
@@ -153,12 +183,15 @@ const Navbar: React.FC<NavbarProps> = ({ navListOpen }) => {
               ml="10px"
               color="text.muted"
             >
-              Options
+              {navBarTitle}
             </Typography>
+            {headBar &&
             <Icon className="dropdown-icon" variant="small">
               chevron-right
             </Icon>
+            }
           </Button>
+         
         </Categories>
 
         <FlexBox>{renderNestedNav(navbarNavigations, true)}</FlexBox>
