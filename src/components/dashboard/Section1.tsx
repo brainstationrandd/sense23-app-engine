@@ -1,6 +1,4 @@
-import Box from "@component/Box";
-import Container from "@component/Container";
-import React, { Fragment } from "react";
+import React from "react";
 import AppTodo from "./AppTodo";
 import { LeftGapCard } from './LeftGapCard';
 

@@ -46,7 +46,6 @@ const AppTodo: React.FC = () => {
   }
 
   const keyDownEnvt = (e) => {
-    console.log(e);
     addApp();
   }
 
