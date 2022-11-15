@@ -3,6 +3,9 @@ import Accordion from "../accordion/Accordion";
 import AccordionHeader from "../accordion/AccordionHeader";
 import Card from "../Card";
 import { H6, Paragraph, SemiSpan } from "../Typography";
+import Icon from "@component/icon/Icon";
+import FlexBox from '../FlexBox';
+import { SubmenuItem } from "./subMenuItem";
 
 const DropdownMenu = ({categroyList,CategoryTitle}) => {
   return (
@@ -23,28 +26,34 @@ const DropdownMenu = ({categroyList,CategoryTitle}) => {
               </SemiSpan>
             </AccordionHeader>
             {item.subCategories.map((name) => (
-              <Paragraph
-                className="cursor-pointer"
-                fontSize="14px"
-                color="text.muted"
-                pl="22px"
-                py="6px"
-                key={name}
-              >
-                {name}
-              </Paragraph>
+              <SubmenuItem alignItems="center" pl="1.2rem">
+                <Icon size="1rem">tablet</Icon>
+                <Paragraph
+                  className="cursor-pointer"
+                  fontSize="14px"
+                  color="text.muted"
+                  pl="22px"
+                  py="6px"
+                  key={name}
+                >
+                  {name}
+                </Paragraph>
+              </SubmenuItem>
             ))}
           </Accordion>
         ) : (
-          <Paragraph
-            className="cursor-pointer"
-            fontSize="14px"
-            color="text.muted"
-            py="6px"
-            key={item.title}
-          >
-            {item.title}
-          </Paragraph>
+          <SubmenuItem alignItems="center" pl="1.2rem">
+            <Icon size="1rem">tablet</Icon>
+            <Paragraph
+              className="cursor-pointer"
+              fontSize="14px"
+              color="text.muted"
+              py="6px"
+              key={item.title}
+            >
+              {item.title}
+            </Paragraph>
+          </SubmenuItem>
         )
       )}
 

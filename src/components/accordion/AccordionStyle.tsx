@@ -13,6 +13,11 @@ export const AccordionWrapper = styled(Box)`
 `;
 
 export const AccordionHeaderWrapper = styled(FlexBox)<HeaderProps>`
+  padding: 5px 20px;
+  background: ${({open})=> open? 'rgba(241, 139, 155, 0.58)': ''};
+  &:hover {
+    background: rgba(241, 139, 155, 0.58);
+  }
   .caret-icon {
     transform: ${({ open }) => (open ? "rotate(90deg)" : "rotate(0deg)")};
     transition: transform 250ms ease-in-out;
