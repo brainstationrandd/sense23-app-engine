@@ -13,6 +13,8 @@ import Radio from '../components/radio/Radio';
 import Box from "@component/Box";
 import CheckBox from "./CheckBox";
 import Slider from "../components/slider/Slider";
+import Rating from "../components/rating/Rating";;
+import TextArea from "../components/textarea/TextArea";
 var Twitter = require('twitter');
 
 const IndexPage = () => {
@@ -93,41 +95,35 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
                   </FlexBox>
                 </Box>
               </FlexBox>
-             
-
           </Grid>
 
-          <Grid container width="100%">
+          <Grid container width="100%" >
             <Grid item lg={6} pr={2}>
               <FlexBox justifyContent="flex-end" >
                 <p>$0 - $2,500</p>
               </FlexBox>
               <Slider width="100%" min="0" max="2500" mb={3}/>
             </Grid>
-            
+          </Grid>
+          
+          <FlexBox mb={3}  />
+
+          <Grid>
+            <Rating value={4} color="warn" />
           </Grid>
 
+          <FlexBox mb={3}  />
           
-          
-          
-
-          <TextField label="Name" placeholder="Enrter your name" fullwidth />
-          <Typography>
-            <h4>Modal content here</h4>
-            <p><strong>Size should be:</strong> fluid, xl, lg, md, sm</p>
-            <p>
-              <strong>fluid:</strong> 98% <br />
-              <strong>xl:</strong> 910px <br />
-              <strong>lg:</strong> 750px <br />
-              <strong>md:</strong> 550px <br />
-              <strong>sm:</strong> 350px
-            </p>
-            <p><strong>Size default:</strong> md</p>
-
-            <hr />
-            <h5>Modal props</h5>
-            <p><strong>isModalOpen: </strong>boolean, <strong> <br />size: </strong> string, <br /> <strong>handleModalClose: </strong> function,</p>
-          </Typography>
+          <Grid container width={"100%"} >
+            <Grid item lg={5} pr={2}>
+              <TextField label="Name" placeholder="Enrter your name" fullwidth />
+            </Grid>
+            <Grid item lg={2}> &nbsp; </Grid>
+            <Grid item pl={2} lg={5}>
+              <TextArea label="Textarea field" placeholder="write your comments" fullwidth />
+            </Grid>
+          </Grid>
+         
         </CustomModal>
 
         <Grid container >
