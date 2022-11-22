@@ -7,7 +7,6 @@ import Button from '../components/buttons/Button';
 import Typography from "@component/Typography";
 import Icon from "@component/icon/Icon";
 import CustomModal from '../components/custom-modal/index';
-import { useState } from 'react';
 import TextField from '../components/text-field/TextField';
 import Radio from '../components/radio/Radio';
 import Box from "@component/Box";
@@ -15,6 +14,8 @@ import CheckBox from "./CheckBox";
 import Slider from "../components/slider/Slider";
 import Rating from "../components/rating/Rating";;
 import TextArea from "../components/textarea/TextArea";
+import React, { useState } from "react";
+import ReactFlagsSelect from "react-flags-select";
 var Twitter = require('twitter');
 
 const IndexPage = () => {
@@ -40,6 +41,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
   }
 
   const [isOpenmodal, setIsOpenmodal] = useState(false);
+  const [selected, setSelected] = useState("");
 
   return (
     <main>
@@ -121,6 +123,16 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
             <Grid item lg={2}> &nbsp; </Grid>
             <Grid item pl={2} lg={5}>
               <TextArea label="Textarea field" placeholder="write your comments" fullwidth />
+            </Grid>
+          </Grid>
+
+          <Grid container width={"100%"} >
+            <Grid item lg={5} pr={2}>
+            <ReactFlagsSelect
+              searchable
+              selected={selected}
+              onSelect={(code) => setSelected(code)}
+            />
             </Grid>
           </Grid>
          
