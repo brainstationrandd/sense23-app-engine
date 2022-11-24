@@ -15,10 +15,10 @@ import CheckBox from "./CheckBox";
 import Rating from "../components/rating/Rating";
 import TextArea from "../components/textarea/TextArea";
 import CustomRangeSlider from '../components/CustomRangeSlider';
+import ReactFlagsSelect from "react-flags-select";
 var Twitter = require("twitter");
-
 const IndexPage = () => {
-    const [rangeValue, setRangeValue] = useState({});
+    const [rangeValue, setRangeValue] = useState({minVal:null,maxVal:null});
 
     var client = new Twitter({
         consumer_key: "9O66Br238hKMsxtyREDouhXqD",
@@ -158,7 +158,7 @@ const IndexPage = () => {
                     <Grid container width="100%">
                         <Grid item lg={7} pr={2}>
                             <FlexBox justifyContent="flex-end">
-                                <p>${ parseInt(rangeValue.minVal)} - ${parseInt(rangeValue.maxVal)}</p>
+                              <p>${ parseInt(rangeValue.minVal)} - ${parseInt(rangeValue.maxVal)}</p>
                             </FlexBox>
 
                             <CustomRangeSlider
@@ -196,34 +196,6 @@ const IndexPage = () => {
             />
             </Grid>
           </Grid>
-         
-        </CustomModal>
-
-                    <Grid container width={"100%"}>
-                       
-                    </Grid>
-
-
-                    <Grid container width={"100%"}>
-                        <Grid item lg={5} pr={2}>
-                            <TextField
-                                label="Name"
-                                placeholder="Enrter your name"
-                                fullwidth
-                            />
-                        </Grid>
-                        <Grid item lg={2}>
-                            {" "}
-                            &nbsp;{" "}
-                        </Grid>
-                        <Grid item pl={2} lg={5}>
-                            <TextArea
-                                label="Textarea field"
-                                placeholder="write your comments"
-                                fullwidth
-                            />
-                        </Grid>
-                    </Grid>
                 </CustomModal>
 
                 <Grid container>
