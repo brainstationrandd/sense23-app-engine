@@ -197,60 +197,7 @@ const IndexPage = () => {
                     />
                     </Grid>
                   </Grid>
-                    <FlexBox mb={3} />
-
-                    <Grid container width={"100%"}>
-                        <Grid item lg={5} pr={2}>
-                            <TextField
-                                label="Name"
-                                placeholder="Enrter your name"
-                                fullwidth
-                            />
-                        </Grid>
-                        <Grid item lg={2}>
-                            {" "}
-                            &nbsp;{" "}
-                        </Grid>
-                        <Grid item pl={2} lg={5}>
-                            <TextArea
-                                label="Textarea field"
-                                placeholder="write your comments"
-                                fullwidth
-                            />
-                        </Grid>
-                    </Grid>
-
-                    <Grid container width={"100%"}>
-                        <Grid item lg={5} pr={2}>
-                            <ReactFlagsSelect
-                                searchable
-                                selected={selected}
-                                onSelect={(code) => setSelected(code)}
-                            />
-                        </Grid>
-                    </Grid>
-
-
-                    <Grid container width={"100%"}>
-                        <Grid item lg={5} pr={2}>
-                            <TextField
-                                label="Name"
-                                placeholder="Enrter your name"
-                                fullwidth
-                            />
-                        </Grid>
-                        <Grid item lg={2}>
-                            {" "}
-                            &nbsp;{" "}
-                        </Grid>
-                        <Grid item pl={2} lg={5}>
-                            <TextArea
-                                label="Textarea field"
-                                placeholder="write your comments"
-                                fullwidth
-                            />
-                        </Grid>
-                    </Grid>
+                    
                 </CustomModal>
 
                 <Grid container>
