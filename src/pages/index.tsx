@@ -7,9 +7,9 @@ import FlexBox from "@component/FlexBox";
 import Button from "../components/buttons/Button";
 import Typography from "@component/Typography";
 import Icon from "@component/icon/Icon";
-import CustomModal from '../components/custom-modal/index';
-import TextField from '../components/text-field/TextField';
-import Radio from '../components/radio/Radio';
+import CustomModal from "../components/custom-modal/index";
+import TextField from "../components/text-field/TextField";
+import Radio from "../components/radio/Radio";
 import Box from "@component/Box";
 import CheckBox from "./CheckBox";
 import Rating from "../components/rating/Rating";
@@ -50,8 +50,8 @@ const IndexPage = () => {
         setIsOpenmodal(false);
     };
 
-  const [isOpenmodal, setIsOpenmodal] = useState(false);
-  const [selected, setSelected] = useState("");
+    const [isOpenmodal, setIsOpenmodal] = useState(false);
+    const [selected, setSelected] = useState("");
 
     return (
         <main>
@@ -158,13 +158,16 @@ const IndexPage = () => {
                     <Grid container width="100%">
                         <Grid item lg={7} pr={2}>
                             <FlexBox justifyContent="flex-end">
-                              <p>${ parseInt(rangeValue.minVal)} - ${parseInt(rangeValue.maxVal)}</p>
+                                <p>
+                                    ${parseInt(rangeValue.minVal)} - $
+                                    {parseInt(rangeValue.maxVal)}
+                                </p>
                             </FlexBox>
 
                             <CustomRangeSlider
                                 min={10}
                                 max={2500}
-                                RangeChange={(a)=>setRangeValue(a)}
+                                RangeChange={(a) => setRangeValue(a)}
                             />
                         </Grid>
                     </Grid>
@@ -173,29 +176,81 @@ const IndexPage = () => {
                         <Rating value={4} color="warn" />
                     </Grid>
 
-                   
-                    
-          <FlexBox mb={3}  />
-          
-          <Grid container width={"100%"} >
-            <Grid item lg={5} pr={2}>
-              <TextField label="Name" placeholder="Enrter your name" fullwidth />
-            </Grid>
-            <Grid item lg={2}> &nbsp; </Grid>
-            <Grid item pl={2} lg={5}>
-              <TextArea label="Textarea field" placeholder="write your comments" fullwidth />
-            </Grid>
-          </Grid>
+                    <FlexBox mb={3}  />
+                  
+                  <Grid container width={"100%"} >
+                    <Grid item lg={5} pr={2}>
+                      <TextField label="Name" placeholder="Enrter your name" fullwidth />
+                    </Grid>
+                    <Grid item lg={2}> &nbsp; </Grid>
+                    <Grid item pl={2} lg={5}>
+                      <TextArea label="Textarea field" placeholder="write your comments" fullwidth />
+                    </Grid>
+                  </Grid>
 
-          <Grid container width={"100%"} >
-            <Grid item lg={5} pr={2}>
-            <ReactFlagsSelect
-              searchable
-              selected={selected}
-              onSelect={(code) => setSelected(code)}
-            />
-            </Grid>
-          </Grid>
+                  <Grid container width={"100%"} >
+                    <Grid item lg={5} pr={2}>
+                    <ReactFlagsSelect
+                      searchable
+                      selected={selected}
+                      onSelect={(code) => setSelected(code)}
+                    />
+                    </Grid>
+                  </Grid>
+                    <FlexBox mb={3} />
+
+                    <Grid container width={"100%"}>
+                        <Grid item lg={5} pr={2}>
+                            <TextField
+                                label="Name"
+                                placeholder="Enrter your name"
+                                fullwidth
+                            />
+                        </Grid>
+                        <Grid item lg={2}>
+                            {" "}
+                            &nbsp;{" "}
+                        </Grid>
+                        <Grid item pl={2} lg={5}>
+                            <TextArea
+                                label="Textarea field"
+                                placeholder="write your comments"
+                                fullwidth
+                            />
+                        </Grid>
+                    </Grid>
+
+                    <Grid container width={"100%"}>
+                        <Grid item lg={5} pr={2}>
+                            <ReactFlagsSelect
+                                searchable
+                                selected={selected}
+                                onSelect={(code) => setSelected(code)}
+                            />
+                        </Grid>
+                    </Grid>
+
+
+                    <Grid container width={"100%"}>
+                        <Grid item lg={5} pr={2}>
+                            <TextField
+                                label="Name"
+                                placeholder="Enrter your name"
+                                fullwidth
+                            />
+                        </Grid>
+                        <Grid item lg={2}>
+                            {" "}
+                            &nbsp;{" "}
+                        </Grid>
+                        <Grid item pl={2} lg={5}>
+                            <TextArea
+                                label="Textarea field"
+                                placeholder="write your comments"
+                                fullwidth
+                            />
+                        </Grid>
+                    </Grid>
                 </CustomModal>
 
                 <Grid container>
